@@ -1,0 +1,27 @@
+import pygame,sys
+from pygame.locals import QUIT
+
+pygame.init()
+screen = pygame.display.set_mode((800,800))
+pygame.display.set_caption("The Revision Test")
+
+screen.fill("turquoise")
+
+img = pygame.image.load("curry.png")
+image = pygame.transform.scale(img, (150,150))
+
+while True:
+
+    screen.blit(image,(400,400))
+
+    font =pygame.font.SysFont("Cedarville Cursive",60)
+    text = font.render("Curry",True,(255,233,0))
+    text2= font.render("is the G.O.A.T!",True,(23,1,253))
+    screen.blit(text, (400,500))
+    screen.blit(text2, (300,600))
+    for event in pygame.event.get():
+        if event.type == QUIT:
+
+            pygame.quit()
+            sys.exit()
+    pygame.display.update()
